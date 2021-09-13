@@ -20,7 +20,7 @@ class CategoryController extends Controller
      function delete($id){
         $categorie = Category::findOrFail($id);
         $categorie->delete();
-        return redirect('/categories')->with('message' , 'Marca borrada');
+        return redirect('/categories')->with('message' , 'Categoria borrada');
     }
     function form ($id = null){
         $categorie = new Category();
