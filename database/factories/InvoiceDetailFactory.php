@@ -25,7 +25,7 @@ class InvoiceDetailFactory extends Factory
             'invoice_id' => random_int(1,5),
             'product_id' => random_int(1,30),
             'quantity' => random_int(1,5),
-            'price' => random_int(100,5000)
+            'price' => random_int(1000,5000)
         ];
     }
 }

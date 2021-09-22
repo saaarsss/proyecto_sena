@@ -3,17 +3,6 @@
 use Illuminate\Support\Facades\Route;
 
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 Route::get('/', function () {
     return view('welcome');
 });
@@ -78,7 +67,11 @@ Route::get('/categorie/formCategorie/{id?}', [CategoryController::class, 'form']
 Route::post('/categorie/saveCategorie', [CategoryController::class, 'save'])->name('categorie.saveCategorie');
 
 
-Route::get('/invoice/{id}', function($id){
-    $invoice = App\Models\Invoice::findOrFail($id);
-    return dd($invoice->products);
-});
+// Route::get('/invoice/{id}', function($id){
+//     $invoice = App\Models\Invoice::findOrFail($id);
+//     return dd($invoice->products);
+// });
+
+use App\Http\Controllers\InvoiceController;
+Route::get('invoices', [InvoiceController::class , 'show']);
+Route::get('invoice/form', [InvoiceController::class , 'form'])->name('invoice.form');

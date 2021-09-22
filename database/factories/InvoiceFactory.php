@@ -23,7 +23,7 @@ class InvoiceFactory extends Factory
     {
         return [
             'subtotal' => random_int(1000,5000),
-            'total' => random_int (1500,10000)
+            'total' => random_int(1500,10000)
         ];
     }
 }
